@@ -9,9 +9,13 @@ const PORT = 5000; // all caps bc it'll never change
 // 1-1024 are in use, so don't use them
 
 // req is request, res is response
-app.get('/', function (req, res) {
-    res.send('Hello, world!');
-});
+// app.get('/', function (req, res) {
+//     res.send('Hello, world!');
+// });
+
+// use is like get, but works for everything, including get
+// here we're using express as an object with a method
+app.use(express.static('server/public'));
 
 app.get('/hey', function (req, res) {
     res.send('Howdy!');
